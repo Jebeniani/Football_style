@@ -1,5 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
 import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
 
 import './js/cart.js';
 
@@ -39,8 +40,8 @@ const firebaseConfig = {
   $('#simple-timer').syotimer({
     year: 2023,
     month: 9,
-    day: 26,
-    hour: 10,
+    day: 29,
+    hour: 8,
     minute: 15
   });
 
@@ -59,6 +60,49 @@ const firebaseConfig = {
       $('.search-form .form-control').focus();
     }, 400);
   });
+
+  // Initialize Firestore (make sure you've configured Firebase in your project)
+  const app = initializeApp(firebaseConfig);
+
+  const cartIcon = document.querySelector("fas fa-shopping-cart");
+  cartIcon.addEventListener('click', addToCart);
+
+
+  function addToCart(productName, price) {
+
+    const product = {
+      name: productName,
+      price: price,
+  };
+    // Get product details from the clicked element or any other source
+    const productId = 'real_home';
+    const productName = 'Real Madrid Home Kit';
+    const productPrice = 120.00;
+
+    cart.push(product);
+
+    db.collection('cart').doc(productId).set({
+      name: productName,
+      price: productPrice,
+    });
+
+    updateCartCount(cart.length);
+    updateCartCountFromFirestore();
+
+  }
+
+  function updateCartCountFromFirestore() {
+    db.collection('cart').get().then((querySnapshot) => {
+      const count = querySnapshot.size;
+      updateCartCount(count);
+    });
+  }
+
+  function updateCartCount(count) {
+    const cartCountElement = document.getElementById('real_home');
+    cartCountElement.textContent = count;
+  }
+
 
 })(jQuery);
 
