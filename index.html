@@ -68,7 +68,7 @@
 							Shop.
 						</a>
 						<ul class="dropdown-menu" aria-labelledby="navbarDropdown3">
-							<li><a href="index.html">Shop</a></li>
+							<li><a href="shop-sidebar.html">Shop</a></li>
 							<li><a href="checkout.html">Checkout</a></li>
 							<li><a href="cart.html">Cart</a></li>
 							<li><a href="confirmation.html">Confirmation</a></li>
@@ -105,44 +105,16 @@
 				</li>
 
 				<li class="dropdown cart-nav dropdown-slide list-inline-item">
-					<a href="#" class="dropdown-toggle cart-icon" data-toggle="dropdown" data-hover="dropdown">
+					<a href="cart.html" class="dropdown-toggle cart-icon" data-toggle="dropdown" data-hover="dropdown">
 						<i class="fas fa-shopping-cart"></i>
 					</a>
 					<div class="dropdown-menu cart-dropdown">
-						<!-- Cart Item -->
-						<div class="media">
-							<a href="#">
-								<img class="media-object img- mr-3" src="images/shop/cart/cart-1.jpg" alt="image" />
-							</a>
-							<div class="media-body">
-								<h6>Man United<br>- Third kit</h6>
-								<div class="cart-price">
-									<span>1 x</span>
-									<span>85.00</span>
-								</div>
-							</div>
-							<a href="#" class="remove"><i class="fas fa-times"></i></a>
-						</div><!-- / Cart Item -->
-
-						<!-- Cart Item -->
-						<div class="media">
-							<a href="#">
-								<img class="media-object img-fluid mr-3" src="images/shop/cart/cart-2.jpg"
-									alt="image" />
-							</a>
-							<div class="media-body">
-								<h6>Man United<br>- Home kit</h6>
-								<div class="cart-price">
-									<span>1 x</span>
-									<span>90.00</span>
-								</div>
-							</div>
-							<a href="#" class="remove"><i class="fas fa-times"></i></a>
-						</div><!-- / Cart Item -->
+						<!-- items loaded by cart.js -->
+						<div id="cart-items"></div>
 
 						<div class="cart-summary">
 							<span class="h6">Total</span>
-							<span class="total-price h6">$175.00</span>
+							<span id="cart-total" class="total-price h6">$0.00</span>
 
 							<div class="text-center cart-buttons mt-3">
 								<a href="cart.html" class="btn btn-small btn-transparent btn-block">View Cart</a>
@@ -151,6 +123,7 @@
 						</div>
 					</div>
 				</li>
+
 				<li class="list-inline-item"><a href="account.html"><i class="bi bi-person"></i></a>
 				</li>
 			</ul>
@@ -294,9 +267,10 @@
 									src="images/shop/products/444.jpg" alt="product-img" /></a>
 						</div>
 
-						<span class="onsale">Sold</span>
 						<div class="product-hover-overlay">
-							<a href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+							<button class="add-to-cart" data-product-id="1"
+								data-product-name="Manchester United - Home shirt" data-product-price="110"
+								data-product-quantity="1"><i class="fas fa-shopping-cart"></i></button>
 						</div>
 
 						<div class="product-info">
@@ -317,7 +291,9 @@
 						</div>
 
 						<div class="product-hover-overlay">
-							<a href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+							<button class="add-to-cart" data-product-id="2" data-product-name="Real Madrid - Home kit"
+								data-product-price="125" data-product-quantity="1"><i
+									class="fas fa-shopping-cart"></i></button>
 						</div>
 
 						<div class="product-info">
@@ -335,12 +311,12 @@
 						<div class="product-wrap">
 							<a href="shop-sidebar.html"><img class="img-fluid w-100 mb-3 img-first"
 									src="images/shop/products/222.png" alt="product-img" /></a>
-
 						</div>
 
-						<span class="onsale">sold</span>
 						<div class="product-hover-overlay">
-							<a href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+							<button class="add-to-cart" data-product-id="3" data-product-name="PSG - Home kit"
+								data-product-price="95" data-product-quantity="1"><i
+									class="fas fa-shopping-cart"></i></button>
 						</div>
 
 						<div class="product-info">
@@ -360,7 +336,9 @@
 						</div>
 
 						<div class="product-hover-overlay">
-							<a href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+							<button class="add-to-cart" data-product-id="4" data-product-name="Chelsea - Home kit"
+								data-product-price="114" data-product-quantity="1"><i
+									class="fas fa-shopping-cart"></i></button>
 						</div>
 
 						<div class="product-info">
@@ -654,7 +632,7 @@
 
 
 
-	<!-- 
+	<!--
     Essential Scripts
     =====================================-->
 
@@ -676,6 +654,7 @@
 	<script src="plugins/google-map/gmap.js"></script>
 	<!-- Main Js File -->
 	<script src="./js/script.js"></script>
+	<script src="./js/cart.js"></script>
 	<script src="./dist/bundle.js"></script>
 
 </body>
