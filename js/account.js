@@ -1,3 +1,4 @@
+
 import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore.js";
 
 
@@ -14,9 +15,9 @@ const firebaseConfig = {
 // Function to retrieve user data from Firestore
 async function getUserData() {
     const db = getFirestore();
-    const userId = firebase.auth().currentUser.uid; // Get the current user's UID
+    const userId = firebase.auth().currentUser.uid;
 
-    const userDocRef = doc(db, "users", userId); // Assuming you have a "users" collection
+    const userDocRef = doc(db, "users", userId);
 
     try {
         const userDocSnap = await getDoc(userDocRef);
