@@ -57,7 +57,6 @@
               Pages.
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown4">
-              <li><a href="about.html">About Us</a></li>
               <li><a href="contact.html">Contact</a></li>
               <li><a href="faq.html">FAQ</a></li>
             </ul>
@@ -69,7 +68,7 @@
               Shop.
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdown3">
-              <li><a href="index.html">Shop</a></li>
+              <li><a href="shop-sidebar.html">Shop</a></li>
               <li><a href="checkout.html">Checkout</a></li>
               <li><a href="cart.html">Cart</a></li>
               <li><a href="confirmation.html">Confirmation</a></li>
@@ -106,43 +105,16 @@
         </li>
 
         <li class="dropdown cart-nav dropdown-slide list-inline-item">
-          <a href="#" class="dropdown-toggle cart-icon" data-toggle="dropdown" data-hover="dropdown">
+          <a href="cart.html" class="dropdown-toggle cart-icon" data-toggle="dropdown" data-hover="dropdown">
             <i class="fas fa-shopping-cart"></i>
           </a>
           <div class="dropdown-menu cart-dropdown">
-            <!-- Cart Item -->
-            <div class="media">
-              <a href="#">
-                <img class="media-object img- mr-3" src="images/shop/cart/cart-1.jpg" alt="image" />
-              </a>
-              <div class="media-body">
-                <h6>Man United<br>- Third kit</h6>
-                <div class="cart-price">
-                  <span>1 x</span>
-                  <span>85.00</span>
-                </div>
-              </div>
-              <a href="#" class="remove"><i class="fas fa-times"></i></a>
-            </div><!-- / Cart Item -->
-
-            <!-- Cart Item -->
-            <div class="media">
-              <a href="#">
-                <img class="media-object img-fluid mr-3" src="images/shop/cart/cart-2.jpg" alt="image" />
-              </a>
-              <div class="media-body">
-                <h6>Man United<br>- Home kit</h6>
-                <div class="cart-price">
-                  <span>1 x</span>
-                  <span>90.00</span>
-                </div>
-              </div>
-              <a href="#" class="remove"><i class="fas fa-times"></i></a>
-            </div><!-- / Cart Item -->
+            <!-- items loaded by cart.js -->
+            <div id="cart-items"></div>
 
             <div class="cart-summary">
               <span class="h6">Total</span>
-              <span class="total-price h6">$175.00</span>
+              <span id="cart-total" class="total-price h6">$0.00</span>
 
               <div class="text-center cart-buttons mt-3">
                 <a href="cart.html" class="btn btn-small btn-transparent btn-block">View Cart</a>
@@ -151,6 +123,7 @@
             </div>
           </div>
         </li>
+
         <li class="list-inline-item"><a href="account.html"><i class="bi bi-person"></i></a>
         </li>
       </ul>
